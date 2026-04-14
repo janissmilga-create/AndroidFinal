@@ -71,9 +71,6 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>${testSuite}</suiteXmlFile>
                     </suiteXmlFiles>
-                    <argLine>
-                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/1.9.24/aspectjweaver-1.9.24.jar"
-                    </argLine>
                 </configuration>
             </plugin>
         </plugins>
