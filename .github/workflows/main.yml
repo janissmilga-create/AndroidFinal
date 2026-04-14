@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Run tests
-        run: mvn test -DtestSuite=${{ inputs.test_suite }}.xml
+        run: mvn test
 
       - name: Upload allure reports as an artifact
         uses: actions/upload-artifact@v4
