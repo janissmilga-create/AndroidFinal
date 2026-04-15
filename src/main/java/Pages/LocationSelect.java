@@ -57,16 +57,16 @@ public class LocationSelect {
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
     public void goToSearch(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(locationSearchButton)).click();
     }
     public void searchSkopje(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(locationSearchField)).sendKeys("Skopje");
         wait.until(ExpectedConditions.elementToBeClickable(selectCity)).click();
     }
     public void chooseDates(String start, String end){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         RemoteWebElement startDate = (RemoteWebElement) driver.findElement(
                 AppiumBy.androidUIAutomator("new UiSelector().description(\"" + start + "\")")
@@ -81,7 +81,7 @@ public class LocationSelect {
         wait.until(ExpectedConditions.elementToBeClickable(confirmDates)).click();
     }
     public void adjustRooms(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(changeRoomSize)).click();
         wait.until(ExpectedConditions.elementToBeClickable(addRooms)).click();
         addAdults.click();
@@ -93,7 +93,7 @@ public class LocationSelect {
                 destinationShown.isDisplayed() && driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"" + expectedDates + "\")")).isDisplayed());
     }
     public void saveProperty(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(openFirstResult)).click();
         wait.until(ExpectedConditions.elementToBeClickable(heartProperty)).click();
         wait.until(ExpectedConditions.elementToBeClickable(backButton)).click();

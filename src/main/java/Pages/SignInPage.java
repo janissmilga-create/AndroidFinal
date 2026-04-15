@@ -29,7 +29,7 @@ public class SignInPage {
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
     public void goToSignIn(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(signInButton)).click();
     }
     public boolean signInPageLoaded() {

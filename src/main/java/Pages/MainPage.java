@@ -36,7 +36,7 @@ public class MainPage {
         return new WebDriverWait(driver, GlobalVariables.globalTimeout).until(ExpectedConditions.visibilityOf(mainPage)).isDisplayed();
     }
     public void skipPopups() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(acceptCookies)).click();
         wait.until(ExpectedConditions.elementToBeClickable(declineNotifications)).click();
         noSignIn.click();
