@@ -4,6 +4,7 @@ import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -68,13 +69,13 @@ public class LocationSelect {
     public void chooseDates(String start, String end){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-        RemoteWebElement startDate = (RemoteWebElement) driver.findElement(
+        WebElement startDate = wait.until(ExpectedConditions.presenceOfElementLocated(
                 AppiumBy.androidUIAutomator("new UiSelector().description(\"" + start + "\")")
-        );
+        ));
 
-        RemoteWebElement endDate = (RemoteWebElement) driver.findElement(
+        WebElement endDate = wait.until(ExpectedConditions.presenceOfElementLocated(
                 AppiumBy.androidUIAutomator("new UiSelector().description(\"" + end + "\")")
-        );
+        ));
 
         wait.until(ExpectedConditions.elementToBeClickable(startDate)).click();
         wait.until(ExpectedConditions.elementToBeClickable(endDate)).click();
